@@ -44,4 +44,4 @@ $ bundle exec ruby invite_new_member.rb new_member.yml
 
 - idobata
 - esa
-- dropbox
+- Dropbox
