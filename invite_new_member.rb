@@ -58,6 +58,23 @@ class InviteNewMember
   end
 
   class GitHub < Service
+    def invite
+      url = "https://api.github.com/orgs/#{@config['organization']}/memberships/#{@config['username']}"
+      client.put(url, {'role' => @config['role']}.to_json, header)
+    end
+
+    def header
+      {
+        'Content-Type'  => 'application/json',
+        'Authorization' => "token #{ENV['GITHUB_TOKEN']}",
+        'User-Agent'    => 'invite user',
+        'Accept'        => 'application/vnd.github.v3+json'
+      }
+    end
+
+    def client
+      @client ||= HTTPClient.new
+    end
   end
 
   class Dropbox < Service

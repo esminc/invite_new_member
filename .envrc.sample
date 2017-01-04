@@ -7,3 +7,4 @@ export SMTP_USER_NAME=user_name
 export SMTP_PASSWORD=password
 export SMTP_AUTHENTICATION=plain
 export SMTP_ENABLE_STARTTLS_AUTO=true
+export GITHUB_TOKEN=XXXXXXXXXXXXXXXX

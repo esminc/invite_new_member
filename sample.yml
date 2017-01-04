@@ -1,4 +1,9 @@
 ---
+github:
+  organization: invite organization name
+  username: invite user name
+  role: admin
+
 idobata:
   invite_url: idobata invite url
   to_address: invite member address
