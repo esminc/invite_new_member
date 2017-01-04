@@ -13,7 +13,7 @@ $ git clone https://github.com/esminc/invite_new_member.git
 $ cd invite_new_member
 ```
 
-Next, you should copy .envrc.sample to .envrc and edit this.
+Next, copy .envrc.sample to .envrc and edit this.
 
 ```sh
 $ cp .envrc.sample .envrc
@@ -33,7 +33,7 @@ $ cp sample.yml new_member.yml
 $ $EDITOR new_member.yml
 ```
 
-Finaly, you execute script.
+Finally, execute script.
 
 ```sh
 $ bundle install
@@ -44,4 +44,4 @@ $ bundle exec ruby invite_new_member.rb new_member.yml
 
 - idobata
 - esa
-- dropbox
+- Dropbox
