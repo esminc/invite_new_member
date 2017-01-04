@@ -2,12 +2,16 @@ GEM
   remote: https://rubygems.org/
   specs:
     httpclient (2.8.3)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
+    mime-types (2.99.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   httpclient
+  mail
 
 BUNDLED WITH
    1.13.7

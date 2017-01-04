@@ -1,6 +1,7 @@
 require 'yaml'
 require 'json'
 require 'httpclient'
+require 'mail'
 
 class InviteNewMember
   class Service
@@ -13,10 +14,45 @@ class InviteNewMember
     end
   end
 
-  class Idobata < Service
+  class MailInviteService < Service
+    def invite
+      mail = Mail.new
+      mail.charset = 'utf-8'
+
+      mail.from    @config['from_address']
+      mail.to      @config['to_address']
+      mail.subject @config['title']
+      mail.body    body_message
+
+      mail.delivery_method :smtp, options
+      mail.deliver
+    end
+
+    def body_message
+      <<-BODY
+#{@config['message']}
+
+#{@config['invite_url']}
+      BODY
+    end
+
+    def options
+      {
+        address:              ENV['SMTP_ADDRESS'],
+        port:                 ENV['SMTP_PORT'].to_i,
+        domain:               ENV['SMTP_DOMAIN'],
+        user_name:            ENV['SMTP_USER_NAME'],
+        password:             ENV['SMTP_PASSWORD'],
+        authentication:       ENV['SMTP_AUTHENTICATION'].to_sym,
+        enable_starttls_auto: ENV['SMTP_ENABLE_STARTTLS_AUTO'] == 'true'
+      }
+    end
   end
 
-  class Esa < Service
+  class Idobata < MailInviteService
+  end
+
+  class Esa < MailInviteService
   end
 
   class GitHub < Service

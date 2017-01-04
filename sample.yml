@@ -1,4 +1,18 @@
 ---
+idobata:
+  invite_url: idobata invite url
+  to_address: invite member address
+  from_address: your address
+  title: invite mail title
+  message: invite message
+
+esa:
+  invite_url: esa invite url
+  to_address: invite member address
+  from_address: your address
+  title: invite mail title
+  message: invite message
+
 dropbox:
   email: invite_member_address
   shared_folder: invite_folder_name

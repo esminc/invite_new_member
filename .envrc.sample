@@ -1,1 +1,9 @@
 export DROPBOX_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+export SMTP_ADDRESS=smtp_url
+export SMTP_PORT=587
+export SMTP_DOMAIN=smtp_domain
+export SMTP_USER_NAME=user_name
+# if you use 2factor authentication, you should use application password https://support.google.com/accounts/answer/185833
+export SMTP_PASSWORD=password
+export SMTP_AUTHENTICATION=plain
+export SMTP_ENABLE_STARTTLS_AUTO=true
