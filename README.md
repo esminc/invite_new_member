@@ -33,7 +33,7 @@ $ cp sample.yml new_member.yml
 $ $EDITOR new_member.yml
 ```
 
-Finaly, execute script.
+Finally, execute script.
 
 ```sh
 $ bundle install
