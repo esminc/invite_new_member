@@ -28,6 +28,8 @@ class InviteNewMember
       mail.deliver
     end
 
+    private
+
     def body_message
       <<-BODY
 #{@config['message']}
@@ -62,6 +64,8 @@ class InviteNewMember
     def invite
       invite_request get_folder_id
     end
+
+    private
 
     def get_folder_id
       url = 'https://api.dropboxapi.com/2/files/list_folder'
